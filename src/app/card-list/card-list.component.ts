@@ -3,6 +3,7 @@ import { CardDataService } from '../card-data.service';
 import { ICardModel } from '../Models/CardModel';
 import { OnInit } from '@angular/core';
 import { NgFor, CommonModule } from '@angular/common'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card-list',
@@ -12,7 +13,7 @@ import { NgFor, CommonModule } from '@angular/common'
   styleUrl: './card-list.component.css',
 })
 export class CardListComponent implements OnInit {
-  constructor(private htmlData: CardDataService)
+  constructor(private htmlData: CardDataService, private router: Router)
   {}
 
   cardList: ICardModel[] = [];
@@ -23,5 +24,13 @@ export class CardListComponent implements OnInit {
       console.log(data)
       this.cardList = data;
     })
+  }
+
+  selectedCard: any;
+
+  ViewCard(card: ICardModel)
+  {
+    this.selectedCard = card
+    console.log(this.selectedCard)
   }
 }

@@ -6,7 +6,7 @@
         <h3 id="header" class="typeProfile">Type</h3>
         <h3 id="header" class="costProfile">Cost</h3>
     </div>
-    <section id="blockSection" *ngFor="let card of cardList">
+    <section id="blockSection" *ngFor="let card of cardList" (click)="ViewCard(card)">
         <div class="idProfile">{{card.id}}</div>
         <div class="nameProfile">{{card.name}}</div>
         <div class="typeProfile">{{card.typeString}}</div>

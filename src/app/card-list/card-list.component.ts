@@ -9,7 +9,7 @@ import { NgFor, CommonModule } from '@angular/common'
   standalone: true,
   imports: [NgFor, CommonModule],
   templateUrl: './card-list.component.html',
-  styleUrl: './card-list.component.css'
+  styleUrl: './card-list.component.css',
 })
 export class CardListComponent implements OnInit {
   constructor(private htmlData: CardDataService)

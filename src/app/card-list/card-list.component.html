@@ -1,4 +1,25 @@
 <p>card-list works!</p>
-<ul>
-    <li *ngFor="let card of cardList">{{card}}</li>
-</ul>
+<div id="cardListBlock">
+    <section id="idSection" class="itemSection">
+        <div id="header">Id</div>
+        <div *ngFor="let card of cardList">
+            <div>{{card.id}}</div>
+        </div>
+    </section>
+
+    <section id="nameSection" class="itemSection">
+        <div id="header">Name</div>
+        <div *ngFor="let card of cardList">
+            <div>{{card.name}}</div>
+        </div>
+    </section>
+
+    <section id="nameSection" class="itemSection">
+        <div id="header">Type</div>
+        <div *ngFor="let card of cardList">
+            <div>{{card.typeString}}</div>
+        </div>
+    </section>
+
+</div>
+

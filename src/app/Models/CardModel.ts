@@ -5,6 +5,7 @@ export interface ICardModel
     cost: number;
     attack: number;
     defense: number;
+    typeString: string;
     inputType: string;
 
 }

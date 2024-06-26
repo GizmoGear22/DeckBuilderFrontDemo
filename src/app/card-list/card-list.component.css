@@ -1,0 +1,18 @@
+#cardListBlock {
+    display: flex;
+}
+
+#header {
+    margin-right: auto;
+    padding-right: 20px;
+    font-weight: 100;
+    border-color: black;
+    max-width: 100px;
+    background-color: lightgrey;   
+}
+
+.itemSection {
+    border-color: black;
+    border-width: 3px;
+    border-style: double;
+}

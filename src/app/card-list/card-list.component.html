@@ -1,5 +1,20 @@
 <p>card-list works!</p>
 <div id="cardListBlock">
+    <div id="headers">
+        <h3 id="header" class="idProfile">Id</h3>
+        <h3 id="header" class="nameProfile">Name</h3>
+        <h3 id="header" class="typeProfile">Type</h3>
+        <h3 id="header" class="costProfile">Cost</h3>
+    </div>
+    <section id="blockSection" *ngFor="let card of cardList">
+        <div class="idProfile">{{card.id}}</div>
+        <div class="nameProfile">{{card.name}}</div>
+        <div class="typeProfile">{{card.typeString}}</div>
+        <div class="costProfile">{{card.cost}}</div>
+    </section>
+</div>
+    <!----
+
     <section id="idSection" class="itemSection">
         <div id="header">Id</div>
         <div *ngFor="let card of cardList">
@@ -27,6 +42,7 @@
             <div>{{card.cost}}</div>
         </div>
     </section>
+---->
 
-</div>
+
 

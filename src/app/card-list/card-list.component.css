@@ -1,18 +1,36 @@
 #cardListBlock {
     display: flex;
+    flex-direction: column;
 }
 
-#header {
-    margin-right: auto;
-    padding-right: 20px;
-    font-weight: 100;
-    border-color: black;
-    max-width: 100px;
-    background-color: lightgrey;   
+#headers {
+    display: flex;
+    flex: inline-block;
+    width: auto;
 }
 
-.itemSection {
+
+#blockSection {
+    display: flex;
+    flex: inline-block;
+    min-width: 200px;
+    max-width: 250px;
     border-color: black;
-    border-width: 3px;
-    border-style: double;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.idProfile {
+    min-width: 30px;
+    background-color: lightblue;
+}
+
+.nameProfile {
+    min-width: 100px;
+    background-color: beige;
+}
+
+.typeProfile {
+    min-width: 70px;
+    background-color: aquamarine;
 }

@@ -21,5 +21,12 @@
         </div>
     </section>
 
+    <section id="nameSection" class="itemSection">
+        <div id="header">Cost</div>
+        <div *ngFor="let card of cardList">
+            <div>{{card.cost}}</div>
+        </div>
+    </section>
+
 </div>
 

@@ -1,0 +1,8 @@
+#pageBlock {
+    display: flex;
+    flex-direction: row;
+}
+
+#cardListBlock {
+    min-width: 400px;
+}

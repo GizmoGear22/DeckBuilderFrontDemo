@@ -31,6 +31,8 @@ export class CardListComponent implements OnInit {
   ViewCard(card: ICardModel)
   {
     this.selectedCard = card
-    console.log(this.selectedCard)
+    this.router.navigate(['card-view', card.id])
+    //console.log(this.selectedCard)
   }
+
 }

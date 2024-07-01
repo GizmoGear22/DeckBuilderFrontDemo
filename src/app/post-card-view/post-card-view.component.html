@@ -1,1 +1,34 @@
 <p>post-card-view works!</p>
+
+<form [formGroup]="newForm">
+    <div id="idBox">
+        <label for="id">Id:</label>
+        <input type="number" id="id" formControlName="id">
+    </div>
+
+    <div id="nameBox">
+        <label for="name">Name:</label>
+        <input type="text" id="name" formControlName="name">
+    </div>
+
+    <div id="typeBox">
+        <label for="type">Card Type:</label>
+        <input type="text" id="type" formControlName="inputType">
+    </div>
+
+    <div id="costBox">
+        <label for="cost">Card Cost:</label>
+        <input type="number" id="cost" formControlName="cost">
+    </div>
+
+    <div id="attackBox">
+        <label for="attack">Attack:</label>
+        <input type="number" id="attack" formControlName="attack">
+    </div>
+
+    <div id="defenseBox">
+        <label for="defense">Defense:</label>
+        <input type="number" id="defense" formControlName="defense">
+    </div>
+
+</form>

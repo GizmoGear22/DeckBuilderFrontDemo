@@ -4,6 +4,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
 import { OnInit } from '@angular/core';
 import { PostCardToAPIService } from '../post-card-to-api.service';
 
+
 @Component({
   selector: 'app-post-card-view',
   standalone: true,
@@ -33,7 +34,11 @@ export class PostCardViewComponent implements OnInit {
   OnSubmit()
   {
     const cardData: ICardModel = this.newForm.value;
-    this.htmlData.AddCard(cardData)
+    console.log(cardData);
+    this.htmlData.AddCard(cardData).subscribe(response => {console.log("Response Accepted", response)},
+    error => {console.error("Not accepted!", error);}
+  )
+    console.log("Hit!")
   }
 
 }

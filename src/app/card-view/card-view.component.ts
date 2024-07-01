@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ICardModel } from '../Models/CardModel';
 import { NgIf } from '@angular/common';
@@ -13,13 +13,20 @@ import { Observable } from 'rxjs';
   templateUrl: './card-view.component.html',
   styleUrl: './card-view.component.css'
 })
-export class CardViewComponent {
+export class CardViewComponent implements OnChanges {
   
   constructor(private router: ActivatedRoute, private cardIdService: GetCardByIdService)
   {}
   @Input() cardID: any
 
   cardData!: any
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['cardID'] && changes['cardID'].currentValue)
+      {
+        this.ClickToView();
+      }
+  }
 
   ClickToView()
   {
@@ -29,22 +36,6 @@ export class CardViewComponent {
         console.log(this.cardData)
       }
   } 
-
-/*
-  ngOnInit() {
-
-    this.cardData = this.cardIdService.GetCardData(this.cardID).subscribe(data => console.log(data));
-    console.log(this.cardData);
-    /*
-    const id = this.router.snapshot.paramMap.get('id');
-    if (id)
-      {
-        console.log(id)
-        let idNumber = Number(id)
-        this.cardData = this.cardIdService.GetCardData(idNumber).subscribe(data => console.log(data));
-        
-      }
-        */
 }
 
 

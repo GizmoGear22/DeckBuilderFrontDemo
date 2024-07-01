@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { CardDataService } from '../card-data.service';
 import { ICardModel } from '../Models/CardModel';
 import { OnInit } from '@angular/core';
@@ -14,7 +14,7 @@ import { CardViewComponent } from '../card-view/card-view.component';
   styleUrl: './card-list.component.css',
 })
 export class CardListComponent implements OnInit {
-  constructor(private htmlData: CardDataService, private router: Router)
+  constructor(private htmlData: CardDataService, private router: Router, private cdr: ChangeDetectorRef)
   {}
 
   cardList: ICardModel[] = [];
@@ -36,7 +36,7 @@ export class CardListComponent implements OnInit {
   {
     this.selectedCard = card
     this.cardId = card.id;
-    console.log(this.cardView)
+    this.cdr.detectChanges();
     this.cardView.ClickToView();
   }
 

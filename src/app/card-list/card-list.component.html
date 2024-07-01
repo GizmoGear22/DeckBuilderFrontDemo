@@ -1,5 +1,6 @@
 <p>card-list works!</p>
-<div id="cardListBlock">
+<main>
+    <div id="cardListBlock">
     <div id="headers">
         <h3 id="header" class="idProfile">Id</h3>
         <h3 id="header" class="nameProfile">Name</h3>
@@ -12,7 +13,12 @@
         <div class="typeProfile">{{card.typeString}}</div>
         <div class="costProfile">{{card.cost}}</div>
     </section>
-</div>
+    </div>
+    <div id="CardViewBlock">
+        <app-card-view [cardID]="cardId"></app-card-view>
+    </div>
+</main>
+
 
 
 

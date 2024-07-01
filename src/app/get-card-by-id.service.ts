@@ -11,11 +11,12 @@ export class GetCardByIdService {
   constructor(private http: HttpClient) { }
 
   cardData!: Observable<ICardModel>;
-  htmlString: string = "https://localhost:44382/api/AvailableCardsAPI/GetCardById";
 
   GetCardData(id: number): Observable<ICardModel>
   {
-    this.cardData = this.http.get<ICardModel>(this.htmlString)
+    const htmlString: string = `https://localhost:44382/api/AvailableCardsAPI/GetCardById?id=${id}`
+    this.cardData = this.http.get<ICardModel>(htmlString)
+    console.log(this.cardData);
     return this.cardData;
   }
 }

@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { CardDataService } from '../card-data.service';
 import { ICardModel } from '../Models/CardModel';
 import { OnInit } from '@angular/core';
 import { NgFor, CommonModule } from '@angular/common'
 import { Router } from '@angular/router';
+import { CardViewComponent } from '../card-view/card-view.component';
 
 @Component({
   selector: 'app-card-list',
   standalone: true,
-  imports: [NgFor, CommonModule],
+  imports: [NgFor, CommonModule, CardViewComponent],
   templateUrl: './card-list.component.html',
   styleUrl: './card-list.component.css',
 })
@@ -26,13 +27,17 @@ export class CardListComponent implements OnInit {
     })
   }
 
+  @ViewChild(CardViewComponent) cardView!: CardViewComponent; 
+
   selectedCard: any;
+  cardId: any;
 
   ViewCard(card: ICardModel)
   {
     this.selectedCard = card
-    this.router.navigate(['card-view', card.id])
-    //console.log(this.selectedCard)
+    this.cardId = card.id;
+    console.log(this.cardView)
+    this.cardView.ClickToView();
   }
 
 }

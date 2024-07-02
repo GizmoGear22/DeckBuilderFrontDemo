@@ -4,7 +4,14 @@
     <div id="headers">
         <h3 id="header" class="idProfile">Id</h3>
         <h3 id="header" class="nameProfile">Name</h3>
-        <h3 id="header" class="typeProfile">Type</h3>
+        <label for="typeProfile">Type</label>
+        <select name="typeProfile" id="typeProfile">
+            <option value="Machine">Machine</option>
+            <option value="Pyro">Pyro</option>
+            <option value="Alchemy">Alchemy</option>
+            <option value="Tesla">Tesla</option>
+            <option value="Bio">Bio</option>
+        </select>
         <h3 id="header" class="costProfile">Cost</h3>
     </div>
     <section id="blockSection" *ngFor="let card of cardList" (click)="ViewCard(card)">

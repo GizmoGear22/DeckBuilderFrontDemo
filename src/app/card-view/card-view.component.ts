@@ -36,6 +36,11 @@ export class CardViewComponent implements OnChanges {
         console.log(this.cardData)
       }
   } 
+
+  SortByType()
+  {
+    
+  }
 }
 
 

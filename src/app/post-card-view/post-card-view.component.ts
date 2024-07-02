@@ -3,12 +3,14 @@ import { ICardModel } from '../Models/CardModel';
 import { ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
 import { OnInit } from '@angular/core';
 import { PostCardToAPIService } from '../post-card-to-api.service';
+import { NgIf } from '@angular/common';
+import { HttpErrorResponse } from '@angular/common/http';
 
 
 @Component({
   selector: 'app-post-card-view',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, NgIf],
   templateUrl: './post-card-view.component.html',
   styleUrl: './post-card-view.component.css'
 })
@@ -31,12 +33,14 @@ export class PostCardViewComponent implements OnInit {
     })
   }
 
+  errorMessage!: string
+
   OnSubmit()
   {
     const cardData: ICardModel = this.newForm.value;
     console.log(cardData);
     this.htmlData.AddCard(cardData).subscribe(response => {console.log("Response Accepted", response)},
-    error => {console.error("Not accepted!", error);}
+    (error: HttpErrorResponse) => {console.error("Not accepted!", error); this.errorMessage = error.error;}
   )
     console.log("Hit!")
   }

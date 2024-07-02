@@ -14,7 +14,7 @@ export class GetCardsByTypeService {
 
   CardByType(type: string): Observable<ICardModel[]>
   {
-    const url: string = `https://localhost:44382/api/AvailableCardsAPI/GetAllCardByType?=${type}`;
+    const url: string = `https://localhost:44382/api/AvailableCardsAPI/GetAllCardByType?type=${type}`;
     this.dataArray = this.http.get<ICardModel[]>(url)
     return this.dataArray;
   }

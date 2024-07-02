@@ -5,12 +5,13 @@
         <h3 id="header" class="idProfile">Id</h3>
         <h3 id="header" class="nameProfile">Name</h3>
         <label for="typeProfile">Type</label>
-        <select name="typeProfile" id="typeProfile">
-            <option value="Machine">Machine</option>
-            <option value="Pyro">Pyro</option>
-            <option value="Alchemy">Alchemy</option>
-            <option value="Tesla">Tesla</option>
-            <option value="Bio">Bio</option>
+        <select name="typeProfile" id="typeProfile" [(ngModel)]="selectedType" (change) = "GetCardTypeSort(selectedType)">
+            <option [value]="'All'">All Types</option>
+            <option [value]="'Machine'">Machine</option>
+            <option [value]="'Pyro'">Pyro</option>
+            <option [value]="'Alchemy'">Alchemy</option>
+            <option [value]="'Tesla'">Tesla</option>
+            <option [value]="'Bio'">Bio</option>
         </select>
         <h3 id="header" class="costProfile">Cost</h3>
     </div>

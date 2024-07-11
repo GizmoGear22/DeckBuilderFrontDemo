@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/52f9cc65-59ba-4d0e-9954-3676aed881fd/resourceGroups/DeckBuildDemo_group/providers/Microsoft.Web/sites/DeckBuilderDemo",
+    "appService.deploySubpath": "dist"
+}

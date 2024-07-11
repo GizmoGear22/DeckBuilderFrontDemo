@@ -8,11 +8,12 @@ import { CardViewComponent } from '../card-view/card-view.component';
 import { GetCardsByTypeService } from '../get-cards-by-type.service';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-card-list',
   standalone: true,
-  imports: [NgFor, CommonModule, CardViewComponent, FormsModule],
+  imports: [NgFor, CommonModule, CardViewComponent, FormsModule, HttpClientModule],
   templateUrl: './card-list.component.html',
   styleUrl: './card-list.component.css',
 })

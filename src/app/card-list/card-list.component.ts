@@ -18,7 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrl: './card-list.component.css',
 })
 export class CardListComponent implements OnInit {
-  constructor(private htmlData: CardDataService, private router: Router, private cdr: ChangeDetectorRef, private getHtmlData: GetCardsByTypeService)
+  constructor(private htmlData: CardDataService, private cdr: ChangeDetectorRef, private getHtmlData: GetCardsByTypeService)
   {}
 
   cardList: ICardModel[] = [];

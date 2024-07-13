@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PostCardViewComponent } from './post-card-view.component';
+import { provideClientHydration } from '@angular/platform-browser';
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 
 describe('PostCardViewComponent', () => {
   let component: PostCardViewComponent;
@@ -8,7 +11,8 @@ describe('PostCardViewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PostCardViewComponent]
+      imports: [PostCardViewComponent],
+      providers: [provideClientHydration(), provideHttpClient(), provideHttpClientTesting()]
     })
     .compileComponents();
     

@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CardViewComponent } from './card-view.component';
+import { provideHttpClient } from '@angular/common/http';
+import { GetCardByIdService } from '../get-card-by-id.service';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { provideClientHydration } from '@angular/platform-browser';
 
 describe('CardViewComponent', () => {
   let component: CardViewComponent;
@@ -8,7 +12,8 @@ describe('CardViewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CardViewComponent]
+      imports: [CardViewComponent],
+      providers: [provideHttpClient(), provideHttpClientTesting(), provideClientHydration()]
     })
     .compileComponents();
     

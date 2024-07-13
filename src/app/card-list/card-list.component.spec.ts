@@ -13,8 +13,7 @@ describe('CardListComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [CardListComponent],
-      providers:[provideHttpClient(),
-        provideClientHydration(), provideHttpClientTesting()
+      providers:[provideHttpClient(), provideHttpClientTesting()
       ]
     })
     .compileComponents();

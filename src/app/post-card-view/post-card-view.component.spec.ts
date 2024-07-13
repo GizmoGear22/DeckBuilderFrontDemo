@@ -12,7 +12,7 @@ describe('PostCardViewComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [PostCardViewComponent],
-      providers: [provideClientHydration(), provideHttpClient(), provideHttpClientTesting()]
+      providers: [provideHttpClient(), provideHttpClientTesting()]
     })
     .compileComponents();
     

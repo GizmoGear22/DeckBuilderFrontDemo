@@ -34,7 +34,7 @@ module.exports = function (config) {
     },
     reporters: ['progress', 'kjhtml'],
     port: 9876,
-    browsers: ['ChromeHeadless'],
+    browsers: ['Chrome'],
     restartOnFileChange: true
   });
 };

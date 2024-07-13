@@ -34,7 +34,13 @@ module.exports = function (config) {
     },
     reporters: ['progress', 'kjhtml'],
     port: 9876,
-    browsers: ['Chrome'],
+    browsers: ['ChromiumNoSandbox', 'Chrome'],
+    customLaunchers: {
+      ChromiumNoSandbox: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox', '--headless', '--disable-gpu', '--disable-translate', '--disable-extensions']
+      }
+    },
     restartOnFileChange: true
   });
 };

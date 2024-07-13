@@ -40,6 +40,7 @@ module.exports = function (config) {
         base: 'ChromeHeadless',
         flags: ['--no-sandbox', '--disable-gpu']
       }},
-    restartOnFileChange: true
+    restartOnFileChange: true,
+    singleRun: true
   });
 };

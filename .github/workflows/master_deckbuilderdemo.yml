@@ -49,9 +49,6 @@ jobs:
         with:
           name: deck-builder-front-demo
           path: ./dist
-
-      - name: Unzip artifact for deployment
-        run: unzip release.zip -d ./dist
       
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp

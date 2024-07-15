@@ -61,5 +61,5 @@ jobs:
         with:
           app-name: 'DeckBuilderDemo'
           slot-name: 'Production'
-          package: .
+          package: ./dist/deck-builder-front-demo
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F8DE985A68C643ADA0335A3EEDFE6CF3 }}

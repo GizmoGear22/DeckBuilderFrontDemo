@@ -39,9 +39,9 @@ jobs:
           name: angular-app
           path: ./dist
 
-      -name: Upload web config file
-       uses: actions/upload-artifact@v4
-       with:
+      - name: Upload web config file
+        uses: actions/upload-artifact@v4
+        with:
           name: add-config
           path: ./web.config
         
@@ -60,9 +60,9 @@ jobs:
           name: angular-app
           path: ./dist
 
-      -name: Download config file artifact
-       uses: actions/download-artifact@v4
-       with: 
+      - name: Download config file artifact
+        uses: actions/download-artifact@v4
+        with: 
           name: add-config
           path: .
       

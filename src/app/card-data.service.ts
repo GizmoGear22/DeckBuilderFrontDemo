@@ -11,7 +11,7 @@ export class CardDataService {
   constructor(private http: HttpClient) { }
 
   cardData!: Observable<ICardModel[]>
-  htmlString: string = "https://localhost:44382/api/AvailableCardsAPI/GetAllCards";
+  htmlString: string = "https://deckbuildapi.azurewebsites.net/api/AvailableCardsAPI/GetAllCards";
 
   GetAllCardData() : Observable<ICardModel[]>
   {

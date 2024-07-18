@@ -11,7 +11,7 @@ export class PostCardToAPIService {
 
   constructor(private http: HttpClient) { }
 
-  url: string = 'https://localhost:44382/api/AvailableCardsAPI/PostNewCard';
+  url: string = 'https://deckbuildapi.azurewebsites.net/api/AvailableCardsAPI/PostNewCard';
 
 
   AddCard(card: ICardModel) : Observable<ICardModel>

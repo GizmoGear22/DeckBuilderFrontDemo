@@ -14,7 +14,7 @@ export class GetCardByIdService {
 
   GetCardData(id: number): Observable<ICardModel>
   {
-    const htmlString: string = `https://localhost:44382/api/AvailableCardsAPI/GetCardById?id=${id}`
+    const htmlString: string = `https://deckbuildapi.azurewebsites.net/api/AvailableCardsAPI/GetCardById?id=${id}`
     this.cardData = this.http.get<ICardModel>(htmlString)
     console.log(this.cardData);
     return this.cardData;

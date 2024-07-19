@@ -16,7 +16,7 @@ export class CardDataService {
 
   GetAllCardData() : Observable<ICardModel[]>
   {
-    this.cardData = this.http.get<ICardModel[]>(this.htmlString2)
+    this.cardData = this.http.get<ICardModel[]>(this.htmlString1)
     return this.cardData;
   }
 }

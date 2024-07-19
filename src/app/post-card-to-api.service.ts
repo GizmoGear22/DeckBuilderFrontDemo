@@ -11,8 +11,8 @@ export class PostCardToAPIService {
 
   constructor(private http: HttpClient) { }
 
-  url: string = 'https://deckbuildapi.azurewebsites.net/api/AvailableCardsAPI/PostNewCard';
-
+  url1: string = 'https://deckbuildapi.azurewebsites.net/api/AvailableCardsAPI/PostNewCard';
+  url2: string = 'https://localhost:44351/api/AvailableCardsAPI/PostNewCard'
 
   AddCard(card: ICardModel) : Observable<ICardModel>
   {
@@ -21,7 +21,7 @@ export class PostCardToAPIService {
         'Content-Type': 'application/json'
       })
     }
-    return this.http.post<ICardModel>(this.url, card, httpOptions).pipe(tap(
+    return this.http.post<ICardModel>(this.url2, card, httpOptions).pipe(tap(
       response => {console.log("Accepted", response)}),
       catchError(error => {
         console.error("Invalid", error);

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ICardModel } from './Models/CardModel';
 
@@ -16,7 +16,10 @@ export class CardDataService {
 
   GetAllCardData() : Observable<ICardModel[]>
   {
-    this.cardData = this.http.get<ICardModel[]>(this.htmlString1)
+    const headers = new HttpHeaders ({
+      'Content-Type': 'application/json'
+    })
+    this.cardData = this.http.get<ICardModel[]>(this.htmlString1, {headers})
     return this.cardData;
   }
 }

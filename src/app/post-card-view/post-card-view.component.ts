@@ -39,9 +39,11 @@ export class PostCardViewComponent implements OnInit {
   {
     const cardData: ICardModel = this.newForm.value;
     console.log(cardData);
-    this.htmlData.AddCard(cardData).subscribe(response => {console.log("Response Accepted", response)},
-    (error: HttpErrorResponse) => {console.error("Not accepted!", error); this.errorMessage = error.error;}
-  )
+    this.htmlData.AddCard(cardData).subscribe({
+      next: (response) => {console.log("Post Accepted", response)},
+      error: (err) => {console.log("Error on Post", err)},
+      complete: () => console.info("Post Completed")
+    })
     console.log("Hit!")
   }
 

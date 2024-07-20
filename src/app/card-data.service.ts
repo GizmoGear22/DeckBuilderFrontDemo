@@ -16,9 +16,9 @@ export class CardDataService {
 
   GetAllCardData() : Observable<ICardModel[]>
   {
-    const headers = new HttpHeaders ({
+    const headers = new HttpHeaders({
       'Content-Type': 'application/json'
-    })
+    });
     this.cardData = this.http.get<ICardModel[]>(this.htmlString1, {headers})
     return this.cardData;
   }

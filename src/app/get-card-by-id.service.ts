@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ICardModel } from './Models/CardModel';
 
@@ -15,9 +15,12 @@ export class GetCardByIdService {
 
   GetCardData(id: number): Observable<ICardModel>
   {
+    const headers = new HttpHeaders({
+      "Content-Type": "application/json"
+    })
     const htmlString1: string = `https://deckbuildapi.azurewebsites.net/api/AvailableCardsAPI/GetCardById?id=${id}`
     const htmlString2: string = `https://localhost:44351/api/AvailableCardsAPI/GetCardById?id=${id}`
-    this.cardData = this.http.get<ICardModel>(htmlString1)
+    this.cardData = this.http.get<ICardModel>(htmlString1, {headers})
     console.log(this.cardData);
     return this.cardData;
   }

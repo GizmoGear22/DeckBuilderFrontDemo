@@ -22,6 +22,9 @@ export class CardViewComponent implements OnChanges {
 
   cardData!: any
 
+  backgroundData: any
+  
+
   ngOnChanges(changes: SimpleChanges) {
     if (changes['cardID'] && changes['cardID'].currentValue)
       {
@@ -35,6 +38,29 @@ export class CardViewComponent implements OnChanges {
       {
         this.cardIdService.GetCardData(this.cardID).subscribe(data => this.cardData = data);
         console.log(this.cardData)
+        this.backgroundData = document.getElementById("CardBase")
+        if (this.backgroundData)
+        {
+          switch(this.cardData.type)
+          {
+            case "Machine":
+              this.backgroundData.style.backgroundColor = "bronze"
+              break;
+            case "Pyro":
+              this.backgroundData.style.backgroundColor = "red"
+              break;
+            case "Alchemy":
+              this.backgroundData.style.backgroundColor = "black"
+              break;
+            case "Tesla":
+              this.backgroundData.style.backgroundColor = "blue"
+              break;
+            case "Bio":
+              this.backgroundData.style.backgroundColor = "green"
+              break;
+          }
+        }
+
       }
   } 
 

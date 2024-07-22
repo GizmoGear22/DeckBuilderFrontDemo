@@ -20,7 +20,7 @@ export class GetCardByIdService {
     })
     const htmlString1: string = `https://deckbuildapi.azurewebsites.net/api/AvailableCardsAPI/GetCardById?id=${id}`
     const htmlString2: string = `https://localhost:44351/api/AvailableCardsAPI/GetCardById?id=${id}`
-    this.cardData = this.http.get<ICardModel>(htmlString1, {headers})
+    this.cardData = this.http.get<ICardModel>(htmlString2, {headers})
     console.log(this.cardData);
     return this.cardData;
   }

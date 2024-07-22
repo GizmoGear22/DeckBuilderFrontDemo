@@ -19,7 +19,7 @@ export class CardDataService {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
-    this.cardData = this.http.get<ICardModel[]>(this.htmlString1, {headers})
+    this.cardData = this.http.get<ICardModel[]>(this.htmlString2, {headers})
     return this.cardData;
   }
 }

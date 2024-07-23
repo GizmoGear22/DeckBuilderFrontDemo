@@ -1,6 +1,6 @@
 
 <div *ngIf="cardData">
-    <div id="backgroundData"> 
+    <div [style] = "ChangeStyle()"> 
         <div>{{cardData.name}}</div>
         <div>{{cardData.type}}</div>
         <div>Attack: {{cardData.attack}}</div>

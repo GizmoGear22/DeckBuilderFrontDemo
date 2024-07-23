@@ -47,6 +47,10 @@ export class CardListComponent implements OnInit {
 
   GetCardTypeSort(cardType: string)
   {
+    if (cardType == "All")
+    {
+      this.htmlData.GetAllCardData().subscribe(data => this.cardList = data)
+    }
     this.getHtmlData.CardByType(cardType).subscribe(data => {
       console.log(data);
       this.cardList = data;

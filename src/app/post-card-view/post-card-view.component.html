@@ -1,34 +1,53 @@
-<p>post-card-view works!</p>
+<title>Card Creation</title>
 
 <form [formGroup]="newForm">
-    <div id="idBox">
-        <label for="id">Id:</label>
-        <input type="number" id="id" formControlName="id">
+
+    <div id="idBox" class="my-4">
+        <div class="form-floating">   
+            <input class="form-control w-25" type="number" id="id" formControlName="id" placeholder="Id">
+            <label class="form-label" for="id">Id:</label>
+        </div>
     </div>
 
-    <div id="nameBox">
-        <label for="name">Name:</label>
-        <input type="text" id="name" formControlName="name">
+    <div id="nameBox" class="my-4">
+        <div class="form-floating">
+            <input type="text" id="name" formControlName="name" class="form-control w-25" placeholder="Name">        
+            <label for="name" class="form-label">Name:</label>       
+        </div>
     </div>
 
-    <div id="typeBox">
-        <label for="type">Card Type:</label>
-        <input type="text" id="type" formControlName="inputType">
+    <div id="typeBox" class="my-4">
+        <div class="form-floating">
+            <select id="type" formControlName="inputType" class="form-select w-25">
+                <option>Machine</option>
+                <option>Pyro</option>
+                <option>Alchemy</option>
+                <option>Tesla</option>
+                <option>Bio</option>
+            </select>        
+            <label for="type" class="form-label">Card Type:</label>
+        </div>
     </div>
 
-    <div id="costBox">
-        <label for="cost">Card Cost:</label>
-        <input type="number" id="cost" formControlName="cost">
+    <div id="costBox" class="my-4">
+        <div class="form-floating">
+            <input type="number" id="cost" formControlName="cost" class="form-control w-25" placeholder="Cost">        
+            <label for="cost" class="form-label">Card Cost:</label>
+        </div>
     </div>
 
-    <div id="attackBox">
-        <label for="attack">Attack:</label>
-        <input type="number" id="attack" formControlName="attack">
+    <div id="attackBox" class="my-4">
+        <div class="form-floating">
+            <input type="number" id="attack" formControlName="attack" class="form-control w-25" placeholder="Attack">
+            <label for="attack" class="form-label">Attack:</label>
+        </div>
     </div>
 
-    <div id="defenseBox">
-        <label for="defense">Defense:</label>
-        <input type="number" id="defense" formControlName="defense">
+    <div id="defenseBox" class="my-4">
+        <div class="form-floating">        
+            <input type="number" id="defense" formControlName="defense" class="form-control w-25" placeholder="Defense">
+            <label for="defense" class="form-label">Defense:</label>
+        </div>
     </div>
 
     <button (click)="OnSubmit()">Submit Card</button>
@@ -36,5 +55,6 @@
     <div id="errorMessage" *ngIf="errorMessage">
         {{errorMessage}}
     </div>
+
 
 </form>

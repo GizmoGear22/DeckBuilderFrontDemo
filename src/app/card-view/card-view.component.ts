@@ -41,16 +41,22 @@ export class CardViewComponent implements OnChanges {
       }
   } 
 
-  ChangeStyle()
+  ChangeBackground()
   {
-    if (this.cardData.typeString == "Machine")
+    switch(this.cardData.typeString)
     {
-      return 'backgroundColor: brown'
-    } else if (this.cardData.typeString == "Pyro")
-    {
-      return 'backgroundColor: red'
-    } else {
-      return null;
+      case "Machine":
+        return 'backgroundColor: goldenrod'
+      case "Pyro":
+        return 'backgroundColor: orangered'
+      case "Alchemy":
+        return 'backgroundColor: silver'
+      case "Tesla":
+        return 'backgroundColor: dodgerblue'
+      case "Bio":
+        return 'backgroundColor: limegreen'
+      default:
+        return null;
     }
     
   }

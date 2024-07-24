@@ -1,8 +1,13 @@
 
 <div *ngIf="cardData">
-    <div [style] = "ChangeStyle()"> 
-        <div>{{cardData.name}}</div>
-        <div>{{cardData.type}}</div>
+    <div [style] = "ChangeBackground()" class="container"> 
+        <div class="row"> 
+            <div class="col" id="name">{{cardData.name}}</div>
+            <div class="col" id="cost">Cost: {{cardData.cost}}</div>
+        </div>
+
+
+        <div>{{cardData.typeString}}</div>
         <div>Attack: {{cardData.attack}}</div>
         <div>Defense: {{cardData.defense}}</div>
     </div>

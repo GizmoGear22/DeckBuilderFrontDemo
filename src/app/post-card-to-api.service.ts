@@ -21,7 +21,7 @@ export class PostCardToAPIService {
         'Content-Type': 'application/json'
       })
     }
-    return this.http.post<ICardModel>(this.url2, card, httpOptions).pipe(tap(
+    return this.http.post<ICardModel>(this.url1, card, httpOptions).pipe(tap(
       response => {console.log("Accepted", response)}),
       catchError(error => {
         console.error("Invalid", error);

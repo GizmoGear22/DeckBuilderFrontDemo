@@ -50,11 +50,13 @@ export class CardListComponent implements OnInit {
     if (cardType == "All")
     {
       this.htmlData.GetAllCardData().subscribe(data => this.cardList = data)
+    } else {
+      this.getHtmlData.CardByType(cardType).subscribe(data => {
+        console.log(data);
+        this.cardList = data;
+      })
     }
-    this.getHtmlData.CardByType(cardType).subscribe(data => {
-      console.log(data);
-      this.cardList = data;
-    })
+
   }
 
   ChangeBackgroundColor(card: ICardModel)

@@ -57,4 +57,23 @@ export class CardListComponent implements OnInit {
     })
   }
 
+  ChangeBackgroundColor(card: ICardModel)
+  {
+    switch(card.typeString)
+    {
+      case "Machine":
+        return 'backgroundColor: goldenrod'
+      case "Pyro":
+        return 'backgroundColor: orangered'
+      case "Alchemy":
+        return 'backgroundColor: silver'
+      case "Tesla":
+        return 'backgroundColor: dodgerblue'
+      case "Bio":
+        return 'backgroundColor: limegreen'
+      default:
+        return null;
+    }
+  }
+
 }

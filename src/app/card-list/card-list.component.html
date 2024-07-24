@@ -1,6 +1,34 @@
 
 <main>
     <div id="cardListBlock">
+        <table>
+            <thead>
+                <tr>
+                    <th class="pe-4" style="min-width: 30px;">Id</th>
+                    <th class="pe-4" style="min-width: 100px;">Name</th>
+                    <th>
+                        <select  [(ngModel)]="selectedType" (change) = "GetCardTypeSort(selectedType)">                        
+                            <option [value]="'All'">All Types</option>
+                            <option [value]="'Machine'">Machine</option>
+                            <option [value]="'Pyro'">Pyro</option>
+                            <option [value]="'Alchemy'">Alchemy</option>
+                            <option [value]="'Tesla'">Tesla</option>
+                            <option [value]="'Bio'">Bio</option>
+                        </select>
+                    </th>
+                    <th>Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let card of cardList" (click)="ViewCard(card)" [style] = "ChangeBackgroundColor(card)">
+                    <td class="pe-4" style="min-width: 30px;">{{card.id}}</td>
+                    <td class="pe-4"style="min-width: 100px;">{{card.name}}</td>
+                    <td>{{card.typeString}}</td>
+                    <td>{{card.cost}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <!--
     <div id="headers">
         <h3 id="header" class="idProfile">Id</h3>
         <h3 id="header" class="nameProfile">Name</h3>
@@ -24,6 +52,7 @@
     </div>
     <div id="CardViewBlock">
         <app-card-view [cardID]="cardId"></app-card-view>
+        -->
     </div>
 </main>
 

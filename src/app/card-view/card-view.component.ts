@@ -22,8 +22,6 @@ export class CardViewComponent implements OnChanges {
 
   cardData!: any
 
-  backgroundData: any
-  
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['cardID'] && changes['cardID'].currentValue)
